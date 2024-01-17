@@ -1,14 +1,17 @@
 import { useState } from "react";
 import { TextField, Button } from "@mui/material";
+import { useNavigate } from "react-router-dom";
 
 const Form = () => {
-  const [name, setName] = useState("");
-  const [phone, setPhone] = useState("");
-  const [email, setEmail] = useState("");
+    const [name, setName] = useState("");
+    const [phone, setPhone] = useState("");
+    const [email, setEmail] = useState("");
 
   const [nameError, setNameError] = useState(false);
   const [phoneError, setPhoneError] = useState(false);
   const [emailError, setEmailError] = useState(false);
+
+  const navigate = useNavigate();
 
   const handleSubmit = (event: { preventDefault: () => void }) => {
     event.preventDefault();
@@ -31,19 +34,19 @@ const Form = () => {
       const userDetails = {
         name,
         phone,
-        email
-    };
-    
-    localStorage.setItem("user", JSON.stringify(userDetails));
+        email,
+      };
+
+      localStorage.setItem("user", JSON.stringify(userDetails));
+      navigate("/new");
     }
   };
 
   return (
     <>
       <form
-        // autoComplete="on"
         onSubmit={handleSubmit}
-      >
+        >
         <h2>Form</h2>
         <TextField
           label="Full Name"

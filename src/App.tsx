@@ -6,6 +6,7 @@ function App() {
     <>
     <Routes>
       <Route path="/" element={<Form/>} />
+      <Route path="/new" element={<div>Hello</div>} />
     </Routes>
     </>
   )
