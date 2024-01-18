@@ -7,7 +7,7 @@ function App() {
     <>
     <Routes>
       <Route path="/" element={<Form/>} />
-      <Route path="/new" element={<Posts/>} />
+      <Route path="/second" element={<Posts/>} />
     </Routes>
     </>
   )
