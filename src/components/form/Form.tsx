@@ -38,7 +38,7 @@ const Form = () => {
       };
 
       localStorage.setItem("user", JSON.stringify(userDetails));
-      navigate("/new");
+      navigate("/new")
     }
   };
 
